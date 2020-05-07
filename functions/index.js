@@ -1,7 +1,7 @@
 const functions = require("firebase-functions");
 const createUser = require("./create_User");
 const requestOtp = require("./requestOtp");
-
+const verifyOtp = require("./verifyOtp");
 const admin = require("firebase-admin");
 
 const serviceAccount = require("./serviceAccount.json");
@@ -12,3 +12,4 @@ admin.initializeApp({
 });
 exports.createUser = functions.https.onRequest(createUser);
 exports.requestOtp = functions.https.onRequest(requestOtp);
+exports.verifyOtp = functions.https.onRequest(verifyOtp);
